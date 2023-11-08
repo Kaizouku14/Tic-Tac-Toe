@@ -1,0 +1,163 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  height: 90vh;
+}
+
+p{
+  line-height: 10px;
+}
+.header{
+  display: flex;
+  flex-direction: column ;
+  margin-bottom: 10px;
+}
+.title{
+  font-size: 1.25rem;
+  font-weight: bold;  
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+}
+
+.items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#f2f2f2;
+  border:1px solid #b6b6b6;
+  font-size: 2.40rem;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 
+  0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  
+}
+
+.game-status{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  font-size: 1rem;
+}
+
+.result{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 10px;
+}
+
+div:nth-child(1){
+  border-top-left-radius: 15px;
+}
+
+div:nth-child(3){
+  border-top-right-radius: 15px;
+}
+
+div:nth-child(7){
+  border-bottom-left-radius: 15px;
+}
+
+div:nth-child(9){
+  border-bottom-right-radius: 15px;
+}
+
+.footer{
+  margin: 6px 0px 0px 6px
+}
+a{
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.50rem;
+}
+a:hover{
+   color: #242424;
+}
+
+button {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+button:active {
+  color: #000;
+}
+
+button:active:after {
+  background: transparent;
+}
+
+button:hover:before {
+  opacity: 1;
+}
+
+button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
