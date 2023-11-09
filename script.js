@@ -73,7 +73,7 @@ function checkWinsForPlayer() {
 function checkForDraw() {
     const isBoardFull = board.every(cell => cell === 'X' || cell === 'O');
     if (isBoardFull) {
-        showResult('Draw');
+        showResult('&#x1F64A; Draw &#x1F64A;');
     }
 }
 
